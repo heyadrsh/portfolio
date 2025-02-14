@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadarsh Kumar — Product Designer</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="public/images/profile.webp" as="image" type="image/webp">
+    <link rel="preload" href="styles.css" as="style">
+    
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Otterco:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Aadarsh Kumar - Product Designer specializing in digital products, brands, and experiences">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Aadarsh Kumar — Product Designer">
+    <meta property="og:description" content="Building digital products, brands, and experience">
+    <meta property="og:image" content="public/images/profile.webp">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Top Card (White, U-shape bottom) -->
+        <div class="top-card">
+            <div class="card-content">
+            <header>
+                <nav>
+                        <div class="left-header">
+                            <div class="email-container">
+                                <div class="email" id="email">heyadrsh@gmail.com</div>
+                                <div class="btn-copy-container">
+                                    <div class="hover-gradient"></div>
+                                    <button class="btn-secondary btn-copy" id="copyButton" onclick="copyEmail()">Copy</button>
+                                </div>
+                            </div>
+                            <button class="btn-secondary">CV</button>
+                        </div>
+                        <div class="social-links">
+                            <div class="linkedin-preview-container">
+                                <a href="https://linkedin.com" target="_blank" class="linkedin-link">LinkedIn</a>
+                                <div class="linkedin-preview">
+                                    <div class="preview-content">
+                                        <img src="public/images/linkedin-preview.webp" alt="LinkedIn Profile Preview" class="preview-img" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <span>/</span>
+                            <div class="github-preview-container">
+                                <a href="https://github.com/heyadrsh" target="_blank" class="github-link">GitHub</a>
+                                <div class="github-preview">
+                                    <div class="preview-content">
+                                        <img src="public/images/github-preview.webp" alt="GitHub Profile Preview" class="preview-img" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <span>/</span>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
+                </nav>
+            </header>   
+
+            <section class="hero">
+                <div class="profile">
+                        <picture>
+                            <source srcset="public/images/profile.webp" type="image/webp">
+                            <img src="public/images/profile.png" alt="Profile" class="profile-img">
+                        </picture>
+                        <div class="profile-tag">Aadarsh Kr. <span class="wave">👋</span></div>
+                </div>
+                <h1 class="title">
+                        Building with Python,<br>
+                        Machine Learning, and<br>
+                        <span id="flip-words" class="flip-words">Data Structures</span>
+                </h1>
+                <button class="btn-primary">
+                    Latest Shots
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </section>
+            </div>
+        </div>
+
+        <!-- Technologies Section -->
+        <div class="tech-card">
+            <div class="card-content">
+                <div class="tech-showcase">
+                    <div class="tech-track">
+                        <!-- First set of logos -->
+                        <div class="tech-slide">
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/html.webp" type="image/webp">
+                                    <img src="public/images/technologies/html.png" alt="HTML" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">HTML</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/css-3.webp" type="image/webp">
+                                    <img src="public/images/technologies/css-3.png" alt="CSS" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/python.webp" type="image/webp">
+                                    <img src="public/images/technologies/python.png" alt="Python" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/machine-learning.webp" type="image/webp">
+                                    <img src="public/images/technologies/machine-learning.png" alt="Machine Learning" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Machine Learning</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/DBMS.webp" type="image/webp">
+                                    <img src="public/images/technologies/DBMS.png" alt="DBMS" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Database Management</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/data-structure.webp" type="image/webp">
+                                    <img src="public/images/technologies/data-structure.png" alt="Data Structures" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Data Structures</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/github.webp" type="image/webp">
+                                    <img src="public/images/technologies/github.png" alt="GitHub" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">GitHub</span>
+                            </div>
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="tech-slide">
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/html.webp" type="image/webp">
+                                    <img src="public/images/technologies/html.png" alt="HTML" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">HTML</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/css-3.webp" type="image/webp">
+                                    <img src="public/images/technologies/css-3.png" alt="CSS" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/python.webp" type="image/webp">
+                                    <img src="public/images/technologies/python.png" alt="Python" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/machine-learning.webp" type="image/webp">
+                                    <img src="public/images/technologies/machine-learning.png" alt="Machine Learning" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Machine Learning</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/DBMS.webp" type="image/webp">
+                                    <img src="public/images/technologies/DBMS.png" alt="DBMS" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Database Management</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/data-structure.webp" type="image/webp">
+                                    <img src="public/images/technologies/data-structure.png" alt="Data Structures" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">Data Structures</span>
+                            </div>
+                            <div class="tech-item">
+                                <picture>
+                                    <source srcset="public/images/technologies/github.webp" type="image/webp">
+                                    <img src="public/images/technologies/github.png" alt="GitHub" class="tech-logo" loading="lazy">
+                                </picture>
+                                <span class="tech-name">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Card (Gray, Rectangle) -->
+        <div class="services-card">
+            <div class="card-content">
+            <section class="services">
+                <h2 class="section-title">
+                    Collaborate with brands and agencies to<br>
+                    create impactful results.
+                </h2>
+                <div class="project-tag">Projects</div>
+                <section class="testimonials-section">
+                    <div class="testimonials-grid">
+                        <div class="testimonials-images">
+                            <!-- Images will be dynamically added here -->
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                <h3 class="testimonial-name"></h3>
+                                <p class="testimonial-designation"></p>
+                                <p class="testimonial-quote"></p>
+                                <div class="project-actions">
+                                    <a href="#" class="project-action-btn github">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                                        </svg>
+                                        View Code
+                                    </a>
+                                    <a href="#" class="project-action-btn demo">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15 3 21 3 21 9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="testimonial-controls">
+                                <button class="testimonial-button prev">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <button class="testimonial-button next">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            </div>
+        </div>
+
+        <!-- Bottom Card (White, Inverse U-shape) -->
+        <div class="bottom-card">
+            <div class="card-content">
+                <section class="contact">
+                    <img src="public/images/handshake.svg" alt="Let's work together" class="handshake-icon">
+                    <h2 class="section-title">Tell me about your next<br>project</h2>
+                    <div style="width: 100%; display: flex; justify-content: center; margin-top: 40px;">
+                        <div style="width: 240px; display: flex; justify-content: space-between; gap: 8px;">
+                            <button class="btn-primary" style="padding: 12px 24px; background: #2A2A2A; border: none; border-radius: 100px; color: white; font-size: 14px; font-weight: normal; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-envelope" style="font-size: 12px;"></i>
+                                Email Me
+                            </button>
+                            <a href="https://wa.me/918929412040" target="_blank" class="btn-primary" style="padding: 12px 24px; background: white; color: #2A2A2A; border: 1px solid rgba(0,0,0,0.1); border-radius: 100px; font-size: 14px; font-weight: normal; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">WhatsApp</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <footer>
+                    <div class="footer-content">
+                        <div class="copyright">© 2024 All rights reserved.</div>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <span>/</span>
+                            <a href="https://github.com/heyadrsh" target="_blank">GitHub</a>
+                            <span>/</span>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        function copyEmail() {
+            const email = document.getElementById('email').textContent;
+            const copyButton = document.getElementById('copyButton');
+            const originalText = copyButton.textContent;
+            
+            // Copy the email
+            navigator.clipboard.writeText(email).then(() => {
+                // Change button text to "Copied!"
+                copyButton.textContent = 'Copied!';
+                
+                // Add a success class for visual feedback
+                copyButton.classList.add('copied');
+                
+                // Reset button text after 2 seconds
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Flip Words Animation
+        class FlipWords {
+            constructor(element, words, duration = 3000) {
+                this.element = element;
+                this.words = words;
+                this.duration = duration;
+                this.currentIndex = 0;
+                this.isAnimating = false;
+                this.init();
+            }
+
+            init() {
+                this.animate();
+            }
+
+            async animate() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.currentIndex = (this.currentIndex + 1) % this.words.length;
+                const word = this.words[this.currentIndex];
+
+                // Exit animation
+                this.element.style.transition = 'all 0.5s ease-out';
+                this.element.style.opacity = '0';
+                this.element.style.transform = 'translateY(-40px) translateX(40px) scale(2) blur(8px)';
+
+                // Wait for exit animation
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                // Update text
+                this.element.textContent = word;
+
+                // Enter animation
+                this.element.style.transform = 'translateY(10px) scale(1)';
+                this.element.style.opacity = '0';
+                
+                // Force reflow
+                this.element.offsetHeight;
+
+                this.element.style.transition = 'all 0.5s ease-out';
+                this.element.style.transform = 'translateY(0) scale(1)';
+                this.element.style.opacity = '1';
+
+                // Reset animation flag after duration
+                setTimeout(() => {
+                    this.isAnimating = false;
+                    this.animate();
+                }, this.duration);
+            }
+        }
+
+        // Initialize flip words
+        document.addEventListener('DOMContentLoaded', () => {
+            const flipElement = document.getElementById('flip-words');
+            const words = [
+                'Data Structures',
+                'Web Development',
+                'Deep Learning',
+                'Computer Vision',
+                'Natural Language Processing',
+                'Cloud Computing',
+                'API Development',
+                'Frontend Design',
+                'Git/GitHub',
+                'Graphical User Interface',
+                'Artificial Intelligence'
+            ];
+            new FlipWords(flipElement, words, 3000);
+        });
+    </script>
+
+    <!-- Smooth Scroll and Animation Handlers -->
+    <script>
+        // Lerp function for smooth interpolation
+        const lerp = (start, end, factor) => (1 - factor) * start + factor * end;
+
+        // Smooth scroll class
+        class SmoothScroll {
+            constructor() {
+                this.targetY = 0;
+                this.currentY = 0;
+                this.scrolling = false;
+                this.speed = 0.1;
+                this.init();
+            }
+
+            init() {
+                // Set initial position
+                this.currentY = window.scrollY;
+                this.targetY = window.scrollY;
+
+                // Bind methods
+                this.onScroll = this.onScroll.bind(this);
+                this.update = this.update.bind(this);
+                this.start = this.start.bind(this);
+                this.stop = this.stop.bind(this);
+
+                // Add event listeners
+                window.addEventListener('scroll', this.onScroll, { passive: true });
+                window.addEventListener('resize', this.onScroll, { passive: true });
+                window.addEventListener('load', this.onScroll, { passive: true });
+
+                // Start animation
+                this.start();
+            }
+
+            onScroll() {
+                this.targetY = window.scrollY;
+                if (!this.scrolling) {
+                    this.start();
+                }
+            }
+
+            update() {
+                this.currentY = lerp(this.currentY, this.targetY, this.speed);
+
+                // Apply the scroll transform
+                document.body.style.transform = `translate3d(0,${-this.currentY}px,0)`;
+
+                // Check if we're close enough to stop
+                if (Math.abs(this.targetY - this.currentY) < 0.1) {
+                    this.stop();
+                    return;
+                }
+
+                // Continue animation
+                requestAnimationFrame(this.update);
+            }
+
+            start() {
+                if (!this.scrolling) {
+                    this.scrolling = true;
+                    requestAnimationFrame(this.update);
+                }
+            }
+
+            stop() {
+                this.scrolling = false;
+            }
+        }
+
+        // Initialize smooth scroll on non-touch devices
+        if (!('ontouchstart' in window)) {
+            new SmoothScroll();
+        }
+
+        // Intersection Observer for animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.tech-item, .service-card, .profile-tag, .btn-primary, .btn-secondary');
+            
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            // Optimize performance by unobserving after animation
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '20px'
+                }
+            );
+
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Debounced scroll handler
+            let scrollTimeout;
+            const body = document.body;
+            
+            window.addEventListener('scroll', () => {
+                if (!scrollTimeout) {
+                    body.classList.add('is-scrolling');
+                }
+
+                clearTimeout(scrollTimeout);
+                
+                scrollTimeout = setTimeout(() => {
+                    body.classList.remove('is-scrolling');
+                    scrollTimeout = null;
+                }, 100);
+            }, { passive: true });
+
+            // Handle smooth anchor scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                        const startPosition = window.pageYOffset;
+                        const distance = targetPosition - startPosition;
+                        const duration = 1000;
+                        let start = null;
+
+                        function animation(currentTime) {
+                            if (start === null) start = currentTime;
+                            const timeElapsed = currentTime - start;
+                            const progress = Math.min(timeElapsed / duration, 1);
+                            const ease = easeInOutCubic(progress);
+                            
+                            window.scrollTo(0, startPosition + distance * ease);
+                            
+                            if (timeElapsed < duration) {
+                                requestAnimationFrame(animation);
+                            }
+                        }
+
+                        function easeInOutCubic(t) {
+                            return t < 0.5 
+                                ? 4 * t * t * t 
+                                : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+                        }
+
+                        requestAnimationFrame(animation);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Create stagger animation for project cards
+            gsap.from('.project-card', {
+                scrollTrigger: {
+                    trigger: '.project-grid',
+                    start: 'top bottom',
+                    toggleActions: 'play none none none',
+                    once: true
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+                stagger: {
+                    each: 0.1,
+                    from: "start"
+                },
+                ease: 'power2.out',
+                clearProps: "all"
+            });
+        });
+    </script>
+
+    <script>
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectGrid = document.querySelector('.project-grid-inner');
+            const projectCards = document.querySelectorAll('.project-card');
+            const prevButton = document.querySelector('.scroll-button.prev');
+            const nextButton = document.querySelector('.scroll-button.next');
+            let currentExpandedCard = null;
+            let currentIndex = 0;
+            const cardWidth = 324; // 300px card width + 24px gap
+            const visibleCards = 4; // Number of cards visible at once
+            const totalCards = projectCards.length;
+            const maxIndex = totalCards - visibleCards;
+
+            // Initialize scroll buttons visibility
+            updateScrollButtons();
+
+            // Handle scroll buttons
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    scrollToCard(currentIndex);
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    scrollToCard(currentIndex);
+                }
+            });
+
+            function scrollToCard(index) {
+                const scrollPosition = index * cardWidth;
+                gsap.to(projectGrid, {
+                    x: -scrollPosition,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    onComplete: updateScrollButtons
+                });
+            }
+
+            function updateScrollButtons() {
+                // Always show next button if there are more cards to show
+                prevButton.classList.toggle('visible', currentIndex > 0);
+                nextButton.classList.toggle('visible', currentIndex < maxIndex);
+            }
+
+            // Handle window resize
+            const handleResize = debounce(() => {
+                if (currentExpandedCard) {
+                    const index = Array.from(projectCards).indexOf(currentExpandedCard);
+                    // Ensure expanded card is visible
+                    if (index < currentIndex || index >= currentIndex + visibleCards) {
+                        currentIndex = Math.max(0, Math.min(index, maxIndex));
+                        scrollToCard(currentIndex);
+                    }
+                }
+                updateScrollButtons();
+            }, 250);
+
+            window.addEventListener('resize', handleResize);
+
+            function expandCard(card) {
+                if (card.classList.contains('animating')) return;
+
+                // If clicking the same expanded card, close it
+                if (card === currentExpandedCard) {
+                    closeCard(card);
+                    return;
+                }
+
+                // Close previously expanded card if exists
+                if (currentExpandedCard) {
+                    closeCard(currentExpandedCard);
+                }
+
+                card.classList.add('animating');
+                
+                const index = Array.from(projectCards).indexOf(card);
+                currentIndex = Math.max(0, Math.min(index, projectCards.length - 4));
+                scrollToCard(currentIndex);
+
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        card.classList.remove('animating');
+                        updateScrollButtons();
+                    }
+                });
+
+                card.classList.add('expanded');
+                currentExpandedCard = card;
+
+                const content = card.querySelector('.project-content');
+                const image = card.querySelector('.project-image');
+                const ctaButton = card.querySelector('.cta-button');
+
+                tl.to(image, {
+                    height: "200px",
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+
+                tl.to(content, {
+                    padding: "24px",
+                    duration: 0.3,
+                    ease: "power2.out"
+                }, "-=0.2");
+
+                gsap.to(ctaButton, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    delay: 0.1,
+                    ease: "power2.out"
+                });
+            }
+
+            function closeCard(card) {
+                if (card.classList.contains('animating')) return;
+                
+                card.classList.add('animating');
+
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        card.classList.remove('expanded');
+                        card.classList.remove('animating');
+                        currentExpandedCard = null;
+                        updateScrollButtons();
+                    }
+                });
+
+                const content = card.querySelector('.project-content');
+                const image = card.querySelector('.project-image');
+                const ctaButton = card.querySelector('.cta-button');
+
+                tl.to(ctaButton, {
+                    opacity: 0,
+                    y: 10,
+                    duration: 0.2,
+                    ease: "power2.in"
+                });
+
+                tl.to(content, {
+                    padding: "16px",
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                }, "-=0.1");
+
+                tl.to(image, {
+                    height: "160px",
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                }, "-=0.2");
+            }
+
+            // Add click handlers for cards
+            projectCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Only handle card clicks if not clicking a CTA button
+                    if (!e.target.classList.contains('cta-button')) {
+                        e.stopPropagation();
+                        if (!card.classList.contains('animating')) {
+                            expandCard(card);
+                        }
+                    }
+                });
+            });
+
+            // Add click handler to close expanded card when clicking outside
+            document.addEventListener('click', (e) => {
+                if (currentExpandedCard && 
+                    !e.target.closest('.project-card') && 
+                    !currentExpandedCard.classList.contains('animating')) {
+                    closeCard(currentExpandedCard);
+                }
+            });
+
+            // Handle escape key to close expanded card
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && currentExpandedCard && !currentExpandedCard.classList.contains('animating')) {
+                    closeCard(currentExpandedCard);
+                }
+            });
+
+            // Intersection Observer for scroll buttons visibility
+            const gridContainer = document.querySelector('.project-grid-container');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateScrollButtons();
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+            observer.observe(gridContainer);
+        });
+    </script>
+
+    <!-- Testimonials Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = [
+                {
+                    name: "Autonomous Snake AI",
+                    tech: "Python • TensorFlow • Pygame • Neural Networks",
+                    description: "An intelligent snake game where AI learns and evolves using deep reinforcement learning, featuring both autonomous and player modes with sleek visualization.",
+                    image: "public/images/projects/snake-ai.webp",
+                    github: "https://github.com/yourusername/snake-ai",
+                    demo: "https://snake-ai-demo.com"
+                },
+                {
+                    name: "AI Image Generation Platform",
+                    tech: "Python • TensorFlow • React • Node.js",
+                    description: "A full-stack AI platform that generates unique images from text descriptions using advanced machine learning models.",
+                    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    github: "https://github.com/yourusername/ai-image-generator",
+                    demo: "https://ai-image-generator.demo.com"
+                },
+                {
+                    name: "Smart Task Manager",
+                    tech: "Python • Django • PostgreSQL",
+                    description: "An intelligent task management system that uses machine learning to prioritize and organize tasks efficiently.",
+                    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    github: "https://github.com/yourusername/smart-task-manager",
+                    demo: "https://smart-task-manager.demo.com"
+                },
+                {
+                    name: "Data Visualization Dashboard",
+                    tech: "Python • Pandas • D3.js",
+                    description: "Interactive dashboard for visualizing complex datasets with real-time updates and customizable charts.",
+                    image: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    github: "https://github.com/yourusername/data-viz-dashboard",
+                    demo: "https://data-viz-dashboard.demo.com"
+                },
+                {
+                    name: "ML-Powered Chatbot",
+                    tech: "Python, NLTK, FastAPI",
+                    description: "A natural language processing chatbot that learns from conversations to provide more accurate responses.",
+                    image: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    name: "Cloud File System",
+                    tech: "Python, AWS, React",
+                    description: "Secure cloud-based file management system with advanced search and sharing capabilities.",
+                    image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ];
+
+            let currentIndex = 0;
+            const imageContainer = document.querySelector('.testimonials-images');
+            const nameElement = document.querySelector('.testimonial-name');
+            const techElement = document.querySelector('.testimonial-designation');
+            const descriptionElement = document.querySelector('.testimonial-quote');
+            const prevButton = document.querySelector('.testimonial-button.prev');
+            const nextButton = document.querySelector('.testimonial-button.next');
+            const textContainer = document.querySelector('.testimonial-text');
+
+            // Create and append image elements
+            projects.forEach((project, index) => {
+                const img = document.createElement('img');
+                img.src = project.image;
+                img.alt = project.name;
+                img.className = `testimonial-image ${index === 0 ? 'active' : ''}`;
+                img.loading = 'lazy';
+                imageContainer.appendChild(img);
+            });
+
+            function updateProject(index) {
+                const images = document.querySelectorAll('.testimonial-image');
+                const gameContainer = document.querySelector('.snake-game-container');
+                const prevIndex = (index - 1 + projects.length) % projects.length;
+                const nextIndex = (index + 1) % projects.length;
+                
+                // Reset all images
+                images.forEach(img => {
+                    img.classList.remove('active');
+                    img.style.display = 'none';
+                });
+
+                // Handle game container visibility and transitions
+                if (gameContainer) {
+                    if (index === 0) {
+                        gameContainer.style.display = 'flex';
+                        setTimeout(() => {
+                            gameContainer.classList.add('active');
+                            gameContainer.classList.remove('next');
+                        }, 50);
+                    } else {
+                        gameContainer.classList.remove('active');
+                        if (index === 1) {
+                            gameContainer.classList.add('next');
+                            setTimeout(() => {
+                                if (index !== 0) {
+                                    gameContainer.style.display = 'none';
+                                }
+                            }, 500);
+                        } else {
+                            gameContainer.classList.remove('next');
+                            setTimeout(() => {
+                                gameContainer.style.display = 'none';
+                            }, 500);
+                        }
+                    }
+                }
+
+                // Set active image and handle transitions
+                if (index !== 0) {
+                    const activeImage = images[index];
+                    activeImage.style.display = 'block';
+                    setTimeout(() => {
+                        activeImage.classList.add('active');
+                    }, 50);
+                }
+
+                // Show previous and next images for stacking effect
+                if (prevIndex !== 0) {
+                    images[prevIndex].style.display = 'block';
+                }
+                if (nextIndex !== 0) {
+                    images[nextIndex].style.display = 'block';
+                }
+
+                // Update text content with animation
+                textContainer.classList.remove('active');
+                setTimeout(() => {
+                    nameElement.textContent = projects[index].name;
+                    techElement.textContent = projects[index].tech;
+                    
+                    // Animate description text word by word
+                    const words = projects[index].description.split(' ');
+                    descriptionElement.innerHTML = words.map((word, i) => 
+                        `<span style="opacity: 0; transform: translateY(10px); transition: all 0.2s ease-in-out ${i * 20}ms;">${word} </span>`
+                    ).join('');
+
+                    // Update project links
+                    const githubLink = document.querySelector('.project-action-btn.github');
+                    const demoLink = document.querySelector('.project-action-btn.demo');
+                    
+                    if (githubLink) githubLink.href = projects[index].github;
+                    if (demoLink) demoLink.href = projects[index].demo;
+
+                    textContainer.classList.add('active');
+                    
+                    // Animate each word
+                    const spans = descriptionElement.querySelectorAll('span');
+                    spans.forEach(span => {
+                        setTimeout(() => {
+                            span.style.opacity = '1';
+                            span.style.transform = 'translateY(0)';
+                        }, 10);
+                    });
+                }, 300);
+            }
+
+            function handleNext() {
+                currentIndex = (currentIndex + 1) % projects.length;
+                updateProject(currentIndex);
+            }
+
+            function handlePrev() {
+                currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+                updateProject(currentIndex);
+            }
+
+            // Add event listeners
+            nextButton.addEventListener('click', handleNext);
+            prevButton.addEventListener('click', handlePrev);
+
+            // Initialize first project
+            updateProject(0);
+
+            // Auto-play functionality
+            const autoplayInterval = setInterval(handleNext, 5000);
+
+            // Clear interval when user interacts
+            [nextButton, prevButton].forEach(button => {
+                button.addEventListener('click', () => {
+                    clearInterval(autoplayInterval);
+                });
+            });
+        });
+    </script>
+
+    <script>
+    class SnakeGame {
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext('2d', { alpha: false });
+            this.gridSize = 20;
+            this.tileCount = 20;
+            this.snake = [{ x: 10, y: 10 }];
+            this.food = this.generateFood();
+            this.dx = 0;
+            this.dy = 0;
+            this.score = 0;
+            this.level = 1;
+            this.baseSpeed = 200;
+            this.gameLoop = null;
+            this.isAIMode = true;
+            this.aiThinkingTime = 200;
+            this.isPaused = true;
+            this.isGameOver = false;
+            this.nextMove = null;
+            this.isThinking = false;
+            this.setupCanvas();
+            this.boundGameStep = this.gameStep.bind(this);
+            this.boundUpdate = this.update.bind(this);
+            this.boundDraw = this.draw.bind(this);
+            this.lastRenderTime = 0;
+            this.frameId = null;
+            
+            // Initial draw to show starting state
+            requestAnimationFrame(() => {
+                this.draw();
+                document.querySelector('.game-score').textContent = `Score: ${this.score} | Lv.${this.level}`;
+                const startBtn = document.querySelector('.start');
+                if (startBtn) {
+                    startBtn.textContent = 'Start Game';
+                }
+            });
+        }
+
+        setupCanvas() {
+            this.canvas.width = 400;
+            this.canvas.height = 400;
+            // Draw initial grid
+            this.draw();
+        }
+
+        generateFood() {
+            let newFood;
+            do {
+                newFood = {
+                    x: Math.floor(Math.random() * this.tileCount),
+                    y: Math.floor(Math.random() * this.tileCount)
+                };
+            } while (this.snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+            return newFood;
+        }
+
+        generateFutureFoodPositions() {
+            const positions = [];
+            const occupied = new Set(this.snake.map(s => `${s.x},${s.y}`));
+            occupied.add(`${this.food.x},${this.food.y}`);
+
+            for (let i = 0; i < 5; i++) {
+                let x, y;
+                do {
+                    x = Math.floor(Math.random() * this.tileCount);
+                    y = Math.floor(Math.random() * this.tileCount);
+                } while (occupied.has(`${x},${y}`));
+                positions.push({ x, y });
+                occupied.add(`${x},${y}`);
+            }
+            return positions;
+        }
+
+        findPath(maxDepth, shouldStop) {
+            const head = this.snake[0];
+            const visited = new Set();
+            const queue = [{
+                x: head.x,
+                y: head.y,
+                path: [],
+                cost: 0,
+                snakeBody: [...this.snake],
+                spaceScore: this.calculateSpaceScore(head.x, head.y, this.snake),
+                futureCollisions: this.predictFutureCollisions(this.snake)
+            }];
+
+            while (queue.length > 0) {
+                if (shouldStop()) {
+                    return this.findSafeMove();
+                }
+
+                // Sort less frequently for better performance
+                if (queue.length > 10) {
+                    queue.sort((a, b) => {
+                        const aDistance = Math.abs(a.x - this.food.x) + Math.abs(a.y - this.food.y);
+                        const bDistance = Math.abs(b.x - this.food.x) + Math.abs(b.y - this.food.y);
+                        const aCollisions = a.futureCollisions;
+                        const bCollisions = b.futureCollisions;
+                        // Prioritize paths with fewer predicted collisions
+                        return (aDistance + aCollisions * 5) - (bDistance + bCollisions * 5);
+                    });
+                    queue.length = Math.min(queue.length, 10);
+                }
+
+                const current = queue.shift();
+                const key = `${current.x},${current.y}`;
+
+                if (visited.has(key)) continue;
+                visited.add(key);
+
+                if (current.x === this.food.x && current.y === this.food.y) {
+                    if (this.isSafePath(current.path, [...this.snake])) {
+                        return current.path;
+                    }
+                    continue;
+                }
+
+                const moves = this.getPrioritizedMoves(current.x, current.y, this.food);
+
+                for (const move of moves) {
+                    const newX = current.x + move.dx;
+                    const newY = current.y + move.dy;
+                    
+                    if (this.isValidMove(newX, newY)) {
+                        const newSnakeBody = this.simulateMove(current.snakeBody, newX, newY);
+                        const futureCollisions = this.predictFutureCollisions(newSnakeBody);
+                        
+                        if (this.hasQuickEscape(newX, newY, newSnakeBody) && futureCollisions < 2) {
+                            queue.push({
+                                x: newX,
+                                y: newY,
+                                path: [...current.path, move],
+                                cost: current.cost + 1,
+                                snakeBody: newSnakeBody,
+                                spaceScore: this.calculateSpaceScore(newX, newY, newSnakeBody),
+                                futureCollisions: futureCollisions
+                            });
+                        }
+                    }
+                }
+            }
+
+            return this.findSafeMove();
+        }
+
+        predictFutureCollisions(snakeBody) {
+            let collisions = 0;
+            const head = snakeBody[0];
+            const bodySet = new Set(snakeBody.slice(1).map(s => `${s.x},${s.y}`));
+            
+            // Check potential collisions in next few moves
+            const moves = [
+                { dx: 0, dy: -1 }, { dx: 1, dy: 0 },
+                { dx: 0, dy: 1 }, { dx: -1, dy: 0 }
+            ];
+
+            for (const move of moves) {
+                const newX = head.x + move.dx;
+                const newY = head.y + move.dy;
+                
+                if (newX < 0 || newX >= this.tileCount || 
+                    newY < 0 || newY >= this.tileCount ||
+                    bodySet.has(`${newX},${newY}`)) {
+                    collisions++;
+                }
+            }
+
+            return collisions;
+        }
+
+        hasQuickEscape(x, y, snakeBody) {
+            let escapeCount = 0;
+            const moves = [
+                { x: x, y: y - 1 }, { x: x + 1, y: y },
+                { x: x, y: y + 1 }, { x: x - 1, y: y }
+            ];
+
+            const snakeSet = new Set(snakeBody.map(s => `${s.x},${s.y}`));
+            const futureBodyPositions = this.predictFutureBodyPositions(snakeBody);
+
+            for (const move of moves) {
+                if (move.x >= 0 && move.x < this.tileCount &&
+                    move.y >= 0 && move.y < this.tileCount &&
+                    !snakeSet.has(`${move.x},${move.y}`) &&
+                    !futureBodyPositions.has(`${move.x},${move.y}`)) {
+                    escapeCount++;
+                    if (escapeCount >= 2) return true;
+                }
+            }
+
+            return false;
+        }
+
+        predictFutureBodyPositions(snakeBody) {
+            const positions = new Set();
+            const head = snakeBody[0];
+            
+            // Predict next few positions based on current direction
+            for (let i = 1; i <= 3; i++) {
+                const futureX = head.x + (this.dx * i);
+                const futureY = head.y + (this.dy * i);
+                positions.add(`${futureX},${futureY}`);
+            }
+
+            // Add current body positions
+            snakeBody.forEach(segment => {
+                positions.add(`${segment.x},${segment.y}`);
+            });
+
+            return positions;
+        }
+
+        getPrioritizedMoves(x, y, target) {
+            const moves = [
+                { dx: 0, dy: -1 },
+                { dx: 1, dy: 0 },
+                { dx: 0, dy: 1 },
+                { dx: -1, dy: 0 }
+            ];
+            
+            // Sort moves based on distance to target
+            return moves.sort((a, b) => {
+                const distA = Math.abs((x + a.dx) - target.x) + Math.abs((y + a.dy) - target.y);
+                const distB = Math.abs((x + b.dx) - target.x) + Math.abs((y + b.dy) - target.y);
+                return distA - distB;
+            });
+        }
+
+        calculateSpaceScore(x, y, snakeBody) {
+            const visited = new Set();
+            const queue = [{ x, y }];
+            let spaceCount = 0;
+            const snakeSet = new Set(snakeBody.map(s => `${s.x},${s.y}`));
+
+            while (queue.length > 0) {
+                const current = queue.shift();
+                const key = `${current.x},${current.y}`;
+
+                if (visited.has(key)) continue;
+                visited.add(key);
+                spaceCount++;
+
+                // Check adjacent cells
+                const moves = [
+                    { x: current.x, y: current.y - 1 },
+                    { x: current.x + 1, y: current.y },
+                    { x: current.x, y: current.y + 1 },
+                    { x: current.x - 1, y: current.y }
+                ];
+
+                for (const move of moves) {
+                    if (move.x >= 0 && move.x < this.tileCount &&
+                        move.y >= 0 && move.y < this.tileCount &&
+                        !snakeSet.has(`${move.x},${move.y}`) &&
+                        !visited.has(`${move.x},${move.y}`)) {
+                        queue.push(move);
+                    }
+                }
+            }
+
+            return spaceCount;
+        }
+
+        findSafeMove() {
+            const head = this.snake[0];
+            const moves = [
+                { dx: 0, dy: -1 }, // up
+                { dx: 1, dy: 0 },  // right
+                { dx: 0, dy: 1 },  // down
+                { dx: -1, dy: 0 }  // left
+            ];
+
+            // Find moves that don't immediately kill the snake
+            const safeMoves = moves.filter(move => {
+                const newX = head.x + move.dx;
+                const newY = head.y + move.dy;
+                const newSnakeBody = this.simulateMove(this.snake, newX, newY);
+                return this.isValidMove(newX, newY) && 
+                       this.hasEscapePath(newX, newY, newSnakeBody) &&
+                       this.calculateSpaceScore(newX, newY, newSnakeBody) >= this.snake.length;
+            });
+
+            if (safeMoves.length === 0) return [moves[0]];
+
+            // Choose the move that leads to the most open space
+            let bestMove = safeMoves[0];
+            let maxScore = -Infinity;
+
+            for (const move of safeMoves) {
+                const newX = head.x + move.dx;
+                const newY = head.y + move.dy;
+                const newSnakeBody = this.simulateMove(this.snake, newX, newY);
+                const spaceScore = this.calculateSpaceScore(newX, newY, newSnakeBody);
+                
+                // Calculate distance to food
+                const distanceToFood = Math.abs(newX - this.food.x) + Math.abs(newY - this.food.y);
+                // Combined score favoring more space and closer to food
+                const score = spaceScore - (distanceToFood * 0.5);
+
+                if (score > maxScore) {
+                    maxScore = score;
+                    bestMove = move;
+                }
+            }
+
+            return [bestMove];
+        }
+
+        isValidMove(x, y) {
+            // Enhanced boundary check
+            if (x < 0 || x >= this.tileCount || y < 0 || y >= this.tileCount) {
+                return false;
+            }
+
+            // Check for collision with snake body (excluding tail since it will move)
+            for (let i = 0; i < this.snake.length - 1; i++) {
+                if (this.snake[i].x === x && this.snake[i].y === y) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        simulateMove(snakeBody, newX, newY) {
+            const newSnakeBody = [{ x: newX, y: newY }, ...snakeBody.slice(0, -1)];
+            return newSnakeBody;
+        }
+
+        isSafePath(path, currentSnake) {
+            let snake = [...currentSnake];
+            for (const move of path) {
+                const newHead = {
+                    x: snake[0].x + move.dx,
+                    y: snake[0].y + move.dy
+                };
+                snake = [newHead, ...snake.slice(0, -1)];
+                
+                // Check for collisions
+                if (!this.isValidMove(newHead.x, newHead.y)) return false;
+                
+                // Check if we can still move after this move
+                if (!this.hasEscapePath(newHead.x, newHead.y, snake)) return false;
+            }
+            return true;
+        }
+
+        hasEscapePath(x, y, snakeBody) {
+            const visited = new Set();
+            const queue = [{ x, y }];
+            let emptySpaces = 0;
+            const snakeSet = new Set(snakeBody.map(s => `${s.x},${s.y}`));
+
+            while (queue.length > 0) {
+                const current = queue.shift();
+                const key = `${current.x},${current.y}`;
+
+                if (visited.has(key)) continue;
+                visited.add(key);
+                emptySpaces++;
+
+                // Check all adjacent cells
+                const moves = [
+                    { x: current.x, y: current.y - 1 }, // up
+                    { x: current.x + 1, y: current.y }, // right
+                    { x: current.x, y: current.y + 1 }, // down
+                    { x: current.x - 1, y: current.y }  // left
+                ];
+
+                for (const move of moves) {
+                    if (move.x >= 0 && move.x < this.tileCount &&
+                        move.y >= 0 && move.y < this.tileCount &&
+                        !snakeSet.has(`${move.x},${move.y}`) &&
+                        !visited.has(`${move.x},${move.y}`)) {
+                        queue.push(move);
+                    }
+                }
+            }
+
+            // Ensure there's enough space to move (at least snake length)
+            return emptySpaces >= snakeBody.length;
+        }
+
+        updateAI() {
+            if (!this.isAIMode || this.isThinking) return;
+            
+            // If we have a pre-calculated move, use it
+            if (this.nextMove) {
+                const newX = this.snake[0].x + this.nextMove.dx;
+                const newY = this.snake[0].y + this.nextMove.dy;
+                if (this.isValidMove(newX, newY)) {
+                    this.setDirection(this.nextMove.dx, this.nextMove.dy);
+                }
+            }
+
+            // Start calculating next move with Web Worker if available
+            this.calculateNextMove();
+        }
+
+        calculateNextMove() {
+            if (this.isThinking || !this.isAIMode || this.isPaused || this.isGameOver) return;
+            
+            this.isThinking = true;
+            
+            // Use requestAnimationFrame for better performance
+            requestAnimationFrame(() => {
+                try {
+                    // Remove thinking limits for unlimited AI power
+                    const path = this.findPath(Infinity, () => false);
+                    
+                    if (path && path.length > 0) {
+                        this.nextMove = path[0];
+                    } else {
+                        const safeMoves = this.findSafeMove();
+                        if (safeMoves.length > 0) {
+                            this.nextMove = safeMoves[0];
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error calculating next move:', error);
+                    const safeMoves = this.findSafeMove();
+                    if (safeMoves.length > 0) {
+                        this.nextMove = safeMoves[0];
+                    }
+                } finally {
+                    this.isThinking = false;
+                }
+            });
+        }
+
+        getSpeedForLevel() {
+            // Maintain consistent speed progression regardless of AI mode
+            const baseSpeed = 180;  // Base speed
+            const speedReduction = 10;  // Speed reduction per level
+            const minSpeed = 80;  // Minimum speed (fastest)
+            
+            // Calculate speed with smooth progression
+            return Math.max(baseSpeed - ((this.level - 1) * speedReduction), minSpeed);
+        }
+
+        updateLevel() {
+            // Level up every 50 points instead of 100
+            const newLevel = Math.floor(this.score / 50) + 1;
+            if (newLevel !== this.level) {
+                this.level = newLevel;
+                // Update speed when level changes
+                if (!this.isPaused && !this.isGameOver) {
+                    this.start(); // Restart game loop with new speed
+                }
+            }
+        }
+
+        update() {
+            try {
+                if (this.isGameOver || this.isPaused) return;
+
+                if (this.isAIMode) {
+                    this.updateAI();
+                }
+
+                const head = { x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy };
+
+                // Check if the next move is valid
+                if (!this.isValidMove(head.x, head.y)) {
+                    this.handleGameOver();
+                    return;
+                }
+
+                this.snake.unshift(head);
+
+                // Food collision
+                if (head.x === this.food.x && head.y === this.food.y) {
+                    this.score += 10;
+                    this.updateLevel();
+                    this.food = this.generateFood();
+                    document.querySelector('.game-score').textContent = `Score: ${this.score} | Lv.${this.level}`;
+                    // Pre-calculate next move after eating food
+                    this.calculateNextMove();
+                } else {
+                    this.snake.pop();
+                }
+            } catch (error) {
+                console.error('Error in update:', error);
+                this.handleGameOver();
+            }
+        }
+
+        draw() {
+            // Clear canvas with optimized method
+            this.ctx.fillStyle = '#1a1a1a';
+            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+            // Draw grid more efficiently
+            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            this.ctx.beginPath();
+            // Draw vertical lines
+            for (let i = 0; i <= this.tileCount; i++) {
+                const x = i * this.gridSize;
+                this.ctx.moveTo(x, 0);
+                this.ctx.lineTo(x, this.canvas.height);
+            }
+            // Draw horizontal lines
+            for (let i = 0; i <= this.tileCount; i++) {
+                const y = i * this.gridSize;
+                this.ctx.moveTo(0, y);
+                this.ctx.lineTo(this.canvas.width, y);
+            }
+            this.ctx.stroke();
+
+            // Batch snake rendering
+            this.ctx.save();
+            
+            // Draw snake body first (all non-head, non-tail segments)
+            this.ctx.fillStyle = '#f6f5f4';
+            this.ctx.beginPath();
+            for (let i = 1; i < this.snake.length - 1; i++) {
+                const segment = this.snake[i];
+                this.ctx.rect(
+                    segment.x * this.gridSize + 2,
+                    segment.y * this.gridSize + 2,
+                    this.gridSize - 4,
+                    this.gridSize - 4
+                );
+            }
+            this.ctx.fill();
+
+            // Draw tail
+            const tail = this.snake[this.snake.length - 1];
+            this.ctx.fillStyle = '#e6e5e4';
+            this.ctx.beginPath();
+            const radius = 4;
+            const x = tail.x * this.gridSize + 2;
+            const y = tail.y * this.gridSize + 2;
+            const width = this.gridSize - 4;
+            const height = this.gridSize - 4;
+            
+            this.ctx.moveTo(x + radius, y);
+            this.ctx.lineTo(x + width - radius, y);
+            this.ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            this.ctx.lineTo(x + width, y + height - radius);
+            this.ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            this.ctx.lineTo(x + radius, y + height);
+            this.ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            this.ctx.lineTo(x, y + radius);
+            this.ctx.quadraticCurveTo(x, y, x + radius, y);
+            this.ctx.fill();
+
+            // Draw head
+            const head = this.snake[0];
+            this.ctx.fillStyle = '#f6f5f4';
+            this.ctx.beginPath();
+            this.ctx.arc(
+                head.x * this.gridSize + this.gridSize/2,
+                head.y * this.gridSize + this.gridSize/2,
+                this.gridSize/2 - 2,
+                0,
+                Math.PI * 2
+            );
+            this.ctx.fill();
+
+            // Draw food with optimized animation
+            const time = Date.now() * 0.003;
+            const breathingScale = 1 + Math.sin(time) * 0.1;
+            const foodRadius = (this.gridSize/3) * breathingScale;
+
+            this.ctx.fillStyle = '#ff3333';
+            this.ctx.shadowColor = 'rgba(255, 51, 51, 0.5)';
+            this.ctx.shadowBlur = 15;
+            this.ctx.beginPath();
+            this.ctx.arc(
+                this.food.x * this.gridSize + this.gridSize/2,
+                this.food.y * this.gridSize + this.gridSize/2,
+                foodRadius,
+                0,
+                Math.PI * 2
+            );
+            this.ctx.fill();
+
+            this.ctx.restore();
+        }
+
+        setDirection(x, y) {
+            // Prevent 180-degree turns
+            if (-x !== this.dx || -y !== this.dy) {
+                this.dx = x;
+                this.dy = y;
+            }
+        }
+
+        start() {
+            try {
+                if (this.isGameOver) {
+                    this.reset();
+                }
+
+                // Clean up any existing animation frame
+                if (this.frameId) {
+                    cancelAnimationFrame(this.frameId);
+                    this.frameId = null;
+                }
+
+                // Reset to initial state if needed
+                if (this.dx === 0 && this.dy === 0) {
+                    this.snake = [{ x: 10, y: 10 }];
+                    this.food = this.generateFood();
+                    this.score = 0;
+                    this.level = 1;
+                    if (this.isAIMode) {
+                        const path = this.findPath(50, () => false);
+                        if (path.length > 0) {
+                            this.dx = path[0].dx;
+                            this.dy = path[0].dy;
+                        } else {
+                            this.dx = 1;
+                            this.dy = 0;
+                        }
+                    } else {
+                        this.dx = 1;
+                        this.dy = 0;
+                    }
+                }
+
+                this.isPaused = false;
+                this.isGameOver = false;
+                this.lastRenderTime = 0;
+                
+                // Update button text
+                const startBtn = document.querySelector('.start');
+                if (startBtn) {
+                    startBtn.textContent = 'Started';
+                }
+
+                // Start game loop
+                this.frameId = requestAnimationFrame(this.boundGameStep);
+            } catch (error) {
+                console.error('Error in start:', error);
+                this.handleGameOver();
+            }
+        }
+
+        gameStep(currentTime) {
+            try {
+                if (this.isGameOver) {
+                    if (this.frameId) {
+                        cancelAnimationFrame(this.frameId);
+                        this.frameId = null;
+                    }
+                    return;
+                }
+
+                if (!this.lastRenderTime) {
+                    this.lastRenderTime = currentTime;
+                }
+
+                const deltaTime = currentTime - this.lastRenderTime;
+                const speed = this.getSpeedForLevel();
+
+                if (deltaTime >= speed) {
+                    if (!this.isPaused) {
+                        this.update();
+                        // Only redraw if game is active
+                        requestAnimationFrame(() => {
+                            this.draw();
+                        });
+                    }
+                    this.lastRenderTime = currentTime;
+                }
+
+                if (!this.isGameOver && !this.isPaused) {
+                    this.frameId = requestAnimationFrame(this.boundGameStep);
+                }
+            } catch (error) {
+                console.error('Error in gameStep:', error);
+                this.handleGameOver();
+            }
+        }
+
+        pause() {
+            try {
+                if (this.isGameOver) return;
+                
+                this.isPaused = !this.isPaused;
+                if (this.isPaused) {
+                    if (this.frameId) {
+                        cancelAnimationFrame(this.frameId);
+                        this.frameId = null;
+                    }
+                } else {
+                    this.lastRenderTime = 0;
+                    this.frameId = requestAnimationFrame(this.boundGameStep);
+                }
+                
+                const pauseBtn = document.querySelector('.pause');
+                if (pauseBtn) {
+                    pauseBtn.textContent = this.isPaused ? 'Resume' : 'Pause';
+                }
+            } catch (error) {
+                console.error('Error in pause:', error);
+            }
+        }
+
+        reset() {
+            try {
+                // Cancel any existing animation frame
+                if (this.frameId) {
+                    cancelAnimationFrame(this.frameId);
+                    this.frameId = null;
+                }
+                
+                // Reset game state
+                this.snake = [{ x: 10, y: 10 }];
+                this.food = this.generateFood();
+                this.score = 0;
+                this.level = 1;
+                this.dx = 0;
+                this.dy = 0;
+                this.isPaused = true;
+                this.isGameOver = false;
+                this.lastRenderTime = 0;
+                
+                // Update UI
+                const scoreElement = document.querySelector('.game-score');
+                if (scoreElement) {
+                    scoreElement.style.opacity = '1'; // Show score label again
+                    scoreElement.textContent = `Score: ${this.score} | Lv.${this.level}`;
+                }
+                
+                const overlay = document.querySelector('.game-overlay');
+                if (overlay) {
+                    overlay.classList.remove('visible');
+                }
+                
+                const pauseBtn = document.querySelector('.pause');
+                if (pauseBtn) {
+                    pauseBtn.textContent = 'Pause';
+                }
+                
+                // Re-enable controls
+                this.resetEventListeners();
+                
+                // Ensure canvas is cleared and redrawn
+                requestAnimationFrame(() => {
+                    this.draw();
+                });
+            } catch (error) {
+                console.error('Error in reset:', error);
+                // Ensure game can still be played even if error occurs
+                this.isGameOver = false;
+                this.isPaused = true;
+                this.snake = [{ x: 10, y: 10 }];
+                this.draw();
+            }
+        }
+
+        resetEventListeners() {
+            // Re-enable click events on buttons
+            const buttons = document.querySelectorAll('.game-control-btn');
+            buttons.forEach(btn => {
+                btn.style.pointerEvents = 'auto';
+            });
+        }
+
+        toggleAI() {
+            try {
+                if (this.isGameOver) return;
+                
+                this.isAIMode = !this.isAIMode;
+                const toggleBtn = document.querySelector('.toggle-ai');
+                if (toggleBtn) {
+                    toggleBtn.textContent = this.isAIMode ? 'Manual' : 'AI';
+                }
+                
+                // Update speed without resetting the game
+                this.lastRenderTime = 0;
+                if (!this.isPaused && !this.frameId) {
+                    this.frameId = requestAnimationFrame(this.boundGameStep);
+                }
+            } catch (error) {
+                console.error('Error in toggleAI:', error);
+            }
+        }
+
+        handleGameOver() {
+            try {
+                if (this.isGameOver) return;
+                
+                this.isGameOver = true;
+                this.isPaused = true;
+                
+                // Ensure animation frame is cancelled
+                if (this.frameId) {
+                    cancelAnimationFrame(this.frameId);
+                    this.frameId = null;
+                }
+                
+                // Clear any existing state
+                this.dx = 0;
+                this.dy = 0;
+                this.lastRenderTime = 0;
+
+                // Update UI with animations
+                const overlay = document.querySelector('.game-overlay');
+                const pauseBtn = document.querySelector('.pause');
+                const resetBtn = document.querySelector('.reset');
+                const toggleAiBtn = document.querySelector('.toggle-ai');
+                const scoreLabel = document.querySelector('.game-score');
+                
+                if (overlay) {
+                    const finalScore = overlay.querySelector('.final-score');
+                    if (finalScore) {
+                        finalScore.textContent = `Final Score: ${this.score} | Lv.${this.level}`;
+                    }
+                    
+                    // Hide score label when game is over
+                    if (scoreLabel) {
+                        scoreLabel.style.opacity = '0';
+                    }
+                    
+                    // Hide all control buttons first
+                    pauseBtn.classList.remove('visible');
+                    resetBtn.classList.remove('visible');
+                    toggleAiBtn.classList.remove('visible');
+                    
+                    setTimeout(() => {
+                        pauseBtn.style.display = 'none';
+                        resetBtn.style.display = 'none';
+                        toggleAiBtn.style.display = 'none';
+                        
+                        overlay.classList.add('visible');
+                        // Show overlay reset button
+                        const overlayResetBtn = overlay.querySelector('.reset');
+                        if (overlayResetBtn) {
+                            overlayResetBtn.classList.add('visible');
+                        }
+                    }, 300);
+                }
+
+                // Force a final draw
+                requestAnimationFrame(() => {
+                    this.draw();
+                });
+            } catch (error) {
+                console.error('Error in handleGameOver:', error);
+                this.isGameOver = true;
+                this.isPaused = true;
+                if (this.frameId) {
+                    cancelAnimationFrame(this.frameId);
+                    this.frameId = null;
+                }
+            }
+        }
+
+        calculateWallPenalty(x, y) {
+            // Calculate penalty for being close to walls
+            const distanceToLeftWall = x;
+            const distanceToRightWall = this.tileCount - 1 - x;
+            const distanceToTopWall = y;
+            const distanceToBottomWall = this.tileCount - 1 - y;
+            
+            // Return higher penalty for being closer to walls
+            return Math.max(0, 3 - Math.min(
+                distanceToLeftWall,
+                distanceToRightWall,
+                distanceToTopWall,
+                distanceToBottomWall
+            ));
+        }
+    }
+
+    // Initialize game when the first project is shown
+    document.addEventListener('DOMContentLoaded', () => {
+        const firstImage = document.querySelector('.testimonial-image');
+        if (firstImage) {
+            const gameContainer = document.createElement('div');
+            gameContainer.className = 'snake-game-container active';
+            gameContainer.style.display = 'flex';
+            
+            const canvas = document.createElement('canvas');
+            canvas.className = 'snake-canvas';
+            
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'game-score';
+            scoreDiv.textContent = 'Score: 0 | Lv.1';
+            
+            const controls = document.createElement('div');
+            controls.className = 'game-controls';
+            controls.innerHTML = `
+                <button class="game-control-btn start">Start Game</button>
+                <button class="game-control-btn pause" style="display: none;">Pause</button>
+                <button class="game-control-btn reset" style="display: none;">Reset</button>
+                <button class="game-control-btn toggle-ai">Manual</button>
+            `;
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'game-overlay';
+            overlay.innerHTML = `
+                <h3 style="font-size: 24px; margin-bottom: 16px;">Game Over!</h3>
+                <div class="final-score" style="margin-bottom: 16px;">Score: 0 | Lv.1</div>
+                <button class="game-control-btn reset">Try Again</button>
+            `;
+            
+            gameContainer.appendChild(canvas);
+            gameContainer.appendChild(scoreDiv);
+            gameContainer.appendChild(controls);
+            gameContainer.appendChild(overlay);
+            
+            firstImage.style.display = 'none';
+            firstImage.parentNode.appendChild(gameContainer);
+            
+            const game = new SnakeGame(canvas);
+
+            function showGameControls() {
+                const pauseBtn = document.querySelector('.pause');
+                const resetBtn = document.querySelector('.reset');
+                const toggleAiBtn = document.querySelector('.toggle-ai');
+                
+                pauseBtn.style.display = '';
+                resetBtn.style.display = '';
+                toggleAiBtn.style.display = '';
+                
+                setTimeout(() => {
+                    pauseBtn.classList.add('visible');
+                    resetBtn.classList.add('visible');
+                    toggleAiBtn.classList.add('visible');
+                }, 50);
+            }
+
+            function hideGameOverOverlay() {
+                const overlay = document.querySelector('.game-overlay');
+                if (overlay) {
+                    overlay.classList.remove('visible');
+                    const overlayResetBtn = overlay.querySelector('.reset');
+                    if (overlayResetBtn) {
+                        overlayResetBtn.classList.remove('visible');
+                    }
+                }
+            }
+
+            // Event listeners
+            document.addEventListener('keydown', (e) => {
+                // Handle spacebar for pause/resume
+                if (e.code === 'Space' && !game.isGameOver) {
+                    e.preventDefault(); // Prevent page scrolling
+                    game.pause();
+                    const pauseBtn = document.querySelector('.pause');
+                    if (pauseBtn) {
+                        pauseBtn.textContent = game.isPaused ? 'Resume' : 'Pause';
+                    }
+                    return;
+                }
+
+                // Handle arrow keys for movement
+                if (!game.isAIMode && !game.isPaused && !game.isGameOver) {
+                    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                        e.preventDefault();
+                        
+                        switch(e.key) {
+                            case 'ArrowUp': game.setDirection(0, -1); break;
+                            case 'ArrowDown': game.setDirection(0, 1); break;
+                            case 'ArrowLeft': game.setDirection(-1, 0); break;
+                            case 'ArrowRight': game.setDirection(1, 0); break;
+                        }
+                    }
+                }
+            });
+
+            const startBtn = document.querySelector('.start');
+            const pauseBtn = document.querySelector('.pause');
+            const resetBtn = document.querySelector('.reset');
+            const toggleAiBtn = document.querySelector('.toggle-ai');
+
+            // Initial button states
+            startBtn.classList.add('visible');
+            toggleAiBtn.classList.add('visible');
+
+            startBtn.addEventListener('click', () => {
+                game.start();
+                
+                // Hide start button with animation
+                startBtn.classList.remove('visible');
+                setTimeout(() => {
+                    startBtn.style.display = 'none';
+                    
+                    // Show pause and reset buttons with animation
+                    pauseBtn.style.display = '';
+                    resetBtn.style.display = '';
+                    setTimeout(() => {
+                        pauseBtn.classList.add('visible');
+                        resetBtn.classList.add('visible');
+                    }, 50);
+                }, 300);
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                game.pause();
+                pauseBtn.textContent = game.isPaused ? 'Resume' : 'Pause';
+            });
+
+            resetBtn.addEventListener('click', () => {
+                game.reset();
+                game.start();
+                pauseBtn.textContent = 'Pause';
+            });
+
+            toggleAiBtn.addEventListener('click', () => {
+                game.toggleAI();
+                toggleAiBtn.textContent = game.isAIMode ? 'Manual' : 'AI';
+            });
+
+            // Add Try Again button event listener
+            const gameOverlay = document.querySelector('.game-overlay');
+            if (gameOverlay) {
+                const tryAgainBtn = gameOverlay.querySelector('.reset');
+                if (tryAgainBtn) {
+                    tryAgainBtn.addEventListener('click', () => {
+                        hideGameOverOverlay();
+                        game.reset();
+                        game.start();
+                        showGameControls();
+                    });
+                }
+            }
+
+            // Initialize game in paused state
+            game.draw();
+        }
+    });
+    </script>
+</body>
+</html> 
