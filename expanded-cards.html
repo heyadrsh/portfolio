@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanded Cards</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #F6F5F4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card.expanded {
+            width: 360px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card.expanded .project-image {
+            height: 200px;
+        }
+
+        .project-content {
+            padding: 16px;
+            transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card.expanded .project-content {
+            padding: 24px;
+        }
+
+        .cta-button {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 16px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #1A1A1A;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .project-card.expanded .cta-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Experience Card Styles */
+        .experience-card {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            max-width: 320px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-card:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .card-content {
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+        }
+
+        .card-image {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+
+        .card-info {
+            text-align: left;
+            flex: 1;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-description {
+            font-weight: 400;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .card-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            background-color: #f3f4f6;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-button:hover {
+            background-color: #1a1a1a;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            backdrop-filter: blur(0px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+            backdrop-filter: blur(2px);
+        }
+
+        .modal-container {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            display: flex;
+            pointer-events: none;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(0) scale(0.3);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: auto;
+            position: absolute;
+            width: 400px;
+            height: auto;
+        }
+
+        .modal-content.active {
+            opacity: 1;
+            transform: translateY(-45%) scale(1);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+
+        .modal-details {
+            padding: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.05);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 9999px;
+            height: 2rem;
+            width: 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Project Card Example -->
+    <div class="project-card">
+        <img src="public/images/projects/snake-ai.webp" alt="Project Image" class="project-image">
+        <div class="project-content">
+            <h3 class="card-title">Project Title</h3>
+            <p class="card-description">Project description goes here</p>
+            <button class="cta-button">View Project</button>
+        </div>
+    </div>
+
+    <!-- Experience Card Example -->
+    <div class="experience-card">
+        <div class="card-content">
+            <div class="card-media">
+                <img src="public/images/technologies/machine-learning.webp" alt="DRDO" class="card-image">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">Experience Title</h3>
+                <p class="card-description">Experience description</p>
+            </div>
+        </div>
+        <button class="card-button">View Details</button>
+    </div>
+
+    <!-- Modal Example -->
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-content">
+                <button class="close-button">✕</button>
+                <img src="public/images/technologies/machine-learning.webp" alt="Modal Image" class="modal-image">
+                <div class="modal-details">
+                    <div class="modal-header">
+                        <div>
+                            <h3 class="card-title">Modal Title</h3>
+                            <p class="card-description">Modal description</p>
+                        </div>
+                    </div>
+                    <div class="modal-text">
+                        <div class="modal-description">
+                            <p>Modal content goes here</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                                <span class="tech-tag">Technology 1</span>
+                                <span class="tech-tag">Technology 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example JavaScript to toggle card expansion
+        document.querySelector('.project-card').addEventListener('click', function() {
+            this.classList.toggle('expanded');
+        });
+
+        // Example JavaScript to show modal
+        document.querySelector('.experience-card').addEventListener('click', function() {
+            document.querySelector('.modal-overlay').classList.add('active');
+            document.querySelector('.modal-content').classList.add('active');
+        });
+
+        // Example JavaScript to close modal
+        document.querySelector('.close-button').addEventListener('click', function() {
+            document.querySelector('.modal-overlay').classList.remove('active');
+            document.querySelector('.modal-content').classList.remove('active');
+        });
+    </script>
+</body>
+</html> 

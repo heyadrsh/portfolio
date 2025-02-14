@@ -40,8 +40,57 @@
     <meta property="og:description" content="Building digital products with Python and Machine Learning">
     <meta property="og:image" content="public/images/profile.webp">
     <meta property="og:type" content="website">
+    <style>
+        .framer-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999999;
+            mix-blend-mode: overlay;
+        }
+
+        .framer-overlay-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .framer-overlay-background {
+            background: url("https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png");
+            opacity: 0.15;
+            inset: -200%;
+            width: 400%;
+            height: 400%;
+            position: absolute;
+            animation: framerOverlayAnimation 20s infinite alternate ease-in-out;
+            will-change: transform, filter;
+        }
+
+        @keyframes framerOverlayAnimation {
+            0% {
+                filter: contrast(120%) brightness(1.1) grayscale(0.2);
+                transform: translateX(0.6%) translateY(19%) scale(1);
+            }
+            50% {
+                filter: contrast(130%) brightness(1.15) grayscale(0.1);
+                transform: translateX(1%) translateY(18%) scale(1.05);
+            }
+            100% {
+                filter: contrast(120%) brightness(1.1) grayscale(0.2);
+                transform: translateX(0.6%) translateY(19%) scale(1);
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="framer-overlay">
+        <div class="framer-overlay-container">
+            <div class="framer-overlay-background"></div>
+        </div>
+    </div>
     <div class="main-container">
         <!-- Top Card (White, U-shape bottom) -->
         <div class="top-card">
@@ -224,9 +273,213 @@
             <div class="card-content">
             <section class="services">
                 <h2 class="section-title">
-                    Collaborate with brands and agencies to<br>
+                    Interned at <span class="hover-trigger">SSPL (DRDO)
+                        <div class="hover-card">
+                            <div class="hover-card-content">
+                                <div class="hover-card-header">
+                                    <div>
+                                        <h3 class="hover-card-title">SSPL (DRDO)</h3>
+                                        <p class="hover-card-subtitle">Research & Development Intern</p>
+                                    </div>
+                                </div>
+                                <div class="hover-card-details">
+                                    <div class="hover-card-detail">• Worked on ML-based signal processing</div>
+                                    <div class="hover-card-detail">• Developed data analysis algorithms</div>
+                                    <div class="hover-card-detail">• Implemented research prototypes</div>
+                                    <div class="hover-card-detail">• Created technical documentation</div>
+                                </div>
+                                <div class="hover-card-tags">
+                                    <span class="hover-card-tag">Python</span>
+                                    <span class="hover-card-tag">Signal Processing</span>
+                                    <span class="hover-card-tag">Machine Learning</span>
+                                    <span class="hover-card-tag">Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </span> & <span class="hover-trigger">CETPA
+                        <div class="hover-card">
+                            <div class="hover-card-content">
+                                <div class="hover-card-header">
+                                    <div>
+                                        <h3 class="hover-card-title">CETPA</h3>
+                                        <p class="hover-card-subtitle">ML & Frontend Development Intern</p>
+                                    </div>
+                                </div>
+                                <div class="hover-card-details">
+                                    <div class="hover-card-detail">• Built machine learning models for data analysis</div>
+                                    <div class="hover-card-detail">• Developed responsive web applications</div>
+                                    <div class="hover-card-detail">• Implemented AI/ML solutions</div>
+                                    <div class="hover-card-detail">• Created interactive user interfaces</div>
+                                </div>
+                                <div class="hover-card-tags">
+                                    <span class="hover-card-tag">Python</span>
+                                    <span class="hover-card-tag">Machine Learning</span>
+                                    <span class="hover-card-tag">HTML/CSS</span>
+                                    <span class="hover-card-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </span> to<br>
                     create impactful results.
                 </h2>
+                <style>
+                    .hover-trigger {
+                        position: relative;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-weight: 600;
+                        background: linear-gradient(90deg, #1a1a1a, #666, #1a1a1a);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        background-size: 200% auto;
+                        animation: gradientText 3s ease-in-out infinite;
+                    }
+
+                    @keyframes gradientText {
+                        0% {
+                            background-position: 0% center;
+                        }
+                        50% {
+                            background-position: 100% center;
+                        }
+                        100% {
+                            background-position: 0% center;
+                        }
+                    }
+
+                    .hover-card {
+                        position: absolute;
+                        background: white;
+                        border-radius: 24px;
+                        padding: 24px;
+                        width: 400px;
+                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                        opacity: 0;
+                        transform-origin: top center;
+                        transform: perspective(1000px) rotateX(-10deg) translateY(10px);
+                        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+                        pointer-events: none;
+                        z-index: 1000;
+                        left: 50%;
+                        margin-left: -200px;
+                        top: 100%;
+                        margin-top: 20px;
+                        visibility: hidden;
+                    }
+
+                    .hover-trigger:hover .hover-card {
+                        opacity: 1;
+                        transform: perspective(1000px) rotateX(0) translateY(0);
+                        pointer-events: auto;
+                        visibility: visible;
+                    }
+
+                    .hover-card::after {
+                        content: '';
+                        position: absolute;
+                        top: -8px;
+                        left: 50%;
+                        margin-left: -8px;
+                        width: 16px;
+                        height: 16px;
+                        background: white;
+                        transform: rotate(45deg);
+                        border-left: 1px solid rgba(255, 255, 255, 0.1);
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                        box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .hover-card-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        opacity: 0;
+                        transform: translateY(10px);
+                        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+                        transition-delay: 0.1s;
+                    }
+
+                    .hover-trigger:hover .hover-card-content {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .hover-card-header {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                    }
+
+                    .hover-card-title {
+                        font-size: 24px;
+                        font-weight: 600;
+                        color: #1a1a1a;
+                        margin: 0;
+                    }
+
+                    .hover-card-subtitle {
+                        font-size: 16px;
+                        color: #666;
+                        margin-top: 4px;
+                    }
+
+                    .hover-card-details {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                    }
+
+                    .hover-card-detail {
+                        font-size: 14px;
+                        color: #444;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        opacity: 0;
+                        transform: translateX(-10px);
+                        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+
+                    .hover-trigger:hover .hover-card-detail {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+
+                    .hover-trigger:hover .hover-card-detail:nth-child(1) { transition-delay: 0.1s; }
+                    .hover-trigger:hover .hover-card-detail:nth-child(2) { transition-delay: 0.15s; }
+                    .hover-trigger:hover .hover-card-detail:nth-child(3) { transition-delay: 0.2s; }
+                    .hover-trigger:hover .hover-card-detail:nth-child(4) { transition-delay: 0.25s; }
+
+                    .hover-card-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                        margin-top: 8px;
+                    }
+
+                    .hover-card-tag {
+                        padding: 6px 12px;
+                        background: rgba(0,0,0,0.05);
+                        border-radius: 100px;
+                        font-size: 14px;
+                        color: #1a1a1a;
+                        transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+
+                    .hover-trigger:hover .hover-card-tag {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .hover-trigger:hover .hover-card-tag:nth-child(1) { transition-delay: 0.2s; }
+                    .hover-trigger:hover .hover-card-tag:nth-child(2) { transition-delay: 0.25s; }
+                    .hover-trigger:hover .hover-card-tag:nth-child(3) { transition-delay: 0.3s; }
+                    .hover-trigger:hover .hover-card-tag:nth-child(4) { transition-delay: 0.35s; }
+                </style>
+
                 <div class="project-tag">Projects</div>
                 <section class="testimonials-section">
                     <div class="testimonials-grid">
