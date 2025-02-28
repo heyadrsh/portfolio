@@ -219,6 +219,10 @@ nav {
     perspective: 1000px;
 }
 
+.btn-secondary:hover {
+    text-decoration: underline;
+}
+
 .btn-copy-container {
     position: relative;
     display: flex;
@@ -239,7 +243,7 @@ nav {
 }
 
 .btn-copy-container:hover .hover-gradient {
-    opacity: 1;
+    opacity: 0;
 }
 
 .btn-copy-container .hover-gradient::before {
@@ -355,6 +359,7 @@ nav {
 
 .btn-primary:hover {
     background-color: rgb(24, 24, 24);
+    text-decoration: underline;
 }
 
 /* Optimized Grain Effect */

@@ -95,8 +95,8 @@
                         Machine Learning, and<br>
                         <span id="flip-words" class="flip-words">Data Structures</span>
                 </h1>
-                <button class="btn-primary">
-                    Latest Shots
+                <button class="btn-primary" id="projectsButton">
+                    Projects
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -431,7 +431,7 @@
                     .hover-trigger:hover .hover-card-tag:nth-child(4) { transition-delay: 0.35s; }
                 </style>
 
-                <div class="project-tag">Projects</div>
+                <div class="project-tag" id="projects-section">Projects</div>
                 <section class="testimonials-section">
                     <div class="testimonials-grid">
                         <div class="testimonials-images">
@@ -533,6 +533,27 @@
                 console.error('Failed to copy:', err);
             });
         }
+
+        // Projects button scroll functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsButton = document.getElementById('projectsButton');
+            if (projectsButton) {
+                projectsButton.addEventListener('click', () => {
+                    // Get the tech-card element to position it at the top
+                    const techCard = document.querySelector('.tech-card');
+                    if (techCard) {
+                        // Calculate position to scroll to (tech-card top position)
+                        const techCardPosition = techCard.getBoundingClientRect().top + window.pageYOffset;
+                        
+                        // Smooth scroll to the position
+                        window.scrollTo({
+                            top: techCardPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
 
         // Flip Words Animation
         class FlipWords {
@@ -1796,14 +1817,16 @@
                             this.dx = path[0].dx;
                             this.dy = path[0].dy;
                         } else {
-                            this.dx = 1;
+                            this.dx = 1; // Default direction
                             this.dy = 0;
                         }
                     } else {
-                        this.dx = 1;
+                        this.dx = 1; // Default direction
                         this.dy = 0;
                     }
                 }
+
+                console.log(`Initial Direction: dx=${this.dx}, dy=${this.dy}`); // Debugging statement
 
                 this.isPaused = false;
                 this.isGameOver = false;
