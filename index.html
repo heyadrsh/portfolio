@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Aadarsh - Software Engineer</title>
     
     <!-- Favicon -->
@@ -40,9 +40,76 @@
     <meta property="og:description" content="Building digital products with Python and Machine Learning">
     <meta property="og:image" content="public/images/profile.webp">
     <meta property="og:type" content="website">
+    
+    <style>
+        /* Viewport indicator for development */
+        .viewport-indicator {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        /* Only show desktop indicator on desktop */
+        .desktop-indicator {
+            display: none;
+        }
+        
+        /* Only show mobile indicator on mobile */
+        .mobile-indicator {
+            display: none;
+        }
+        
+        @media (min-width: 961px) {
+            .desktop-indicator {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 960px) {
+            .mobile-indicator {
+                display: block;
+            }
+        }
+    </style>
+    
+    <script>
+        // Update viewport width indicator
+        window.addEventListener('DOMContentLoaded', () => {
+            const updateViewportWidth = () => {
+                const desktopIndicator = document.querySelector('.desktop-indicator');
+                const mobileIndicator = document.querySelector('.mobile-indicator');
+                const width = window.innerWidth;
+                
+                if (desktopIndicator) {
+                    desktopIndicator.textContent = `Desktop View (≥961px) - Width: ${width}px`;
+                }
+                
+                if (mobileIndicator) {
+                    mobileIndicator.textContent = `Mobile View (<961px) - Width: ${width}px`;
+                }
+            };
+            
+            // Update on load
+            updateViewportWidth();
+            
+            // Update on resize
+            window.addEventListener('resize', updateViewportWidth);
+        });
+    </script>
 </head>
 <body>
     <div class="main-container">
+        <!-- Viewport indicators for development -->
+        <div class="viewport-indicator desktop-indicator">Desktop View (≥961px)</div>
+        <div class="viewport-indicator mobile-indicator">Mobile View (<961px)</div>
+        
         <!-- Top Card (White, U-shape bottom) -->
         <div class="top-card">
             <div class="card-content">
@@ -95,10 +162,13 @@
                         Machine Learning, and<br>
                         <span id="flip-words" class="flip-words">Data Structures</span>
                 </h1>
-                <button class="btn-primary" id="projectsButton">
-                    Projects
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <button class="btn-primary group-hover" id="projectsButton">
+                    <span class="btn-text">Projects</span>
+                    <div class="btn-icon">
+                        <span>&lt;/&gt;</span>
+                    </div>
+                    <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </section>
@@ -443,13 +513,13 @@
                                 <p class="testimonial-designation"></p>
                                 <p class="testimonial-quote"></p>
                                 <div class="project-actions">
-                                    <a href="#" class="project-action-btn github">
+                                    <a href="#" class="project-action-btn github" target="_blank">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
                                         </svg>
                                         View Code
                                     </a>
-                                    <a href="#" class="project-action-btn demo">
+                                    <a href="#" class="project-action-btn demo" target="_blank">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                             <polyline points="15 3 21 3 21 9"/>
@@ -459,19 +529,19 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="testimonial-controls">
-                                <button class="testimonial-button prev">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M15 18l-6-6 6-6" />
-                                    </svg>
-                                </button>
-                                <button class="testimonial-button next">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M9 18l6-6-6-6" />
-                                    </svg>
-                                </button>
-                            </div>
                         </div>
+                    </div>
+                    <div class="testimonial-controls">
+                        <button class="testimonial-button prev">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <button class="testimonial-button next">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
                     </div>
                 </section>
             </section>
@@ -482,8 +552,52 @@
         <div class="bottom-card">
             <div class="card-content">
                 <section class="contact">
-                    <img src="public/images/handshake.svg" alt="Let's work together" class="handshake-icon">
+                    <div class="handshake-container">
+                        <div class="handshake-icon" id="handshakeIcon" style="width: 145px; height: 145px;">
+                            <img src="public/images/handshake.webp" alt="Let's Work Together" 
+                                 title="Click to see some magic!">
+                        </div>
+                    </div>
                     <h2 class="section-title">Tell me about your next<br>project</h2>
+                    
+                    <script>
+                        document.getElementById('handshakeIcon').addEventListener('click', function() {
+                            this.classList.add('animate');
+                            setTimeout(() => {
+                                this.classList.remove('animate');
+                            }, 2000);
+                            
+                            // Create confetti effect with updated colors
+                            const colors = ['#f6f5f4', '#e6e5e4', '#d6d5d4', '#c6c5c4'];
+                            for (let i = 0; i < 50; i++) {
+                                const confetti = document.createElement('div');
+                                confetti.style.cssText = `
+                                    position: fixed;
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: ${colors[Math.floor(Math.random() * colors.length)]};
+                                    left: ${Math.random() * 100}vw;
+                                    top: -10px;
+                                    opacity: 0.8;
+                                    pointer-events: none;
+                                    transform: rotate(${Math.random() * 360}deg);
+                                    animation: fall 1s forwards;
+                                `;
+                                document.body.appendChild(confetti);
+                                setTimeout(() => confetti.remove(), 1000);
+                            }
+                        });
+                    </script>
+                    
+                    <style>
+                        @keyframes fall {
+                            to {
+                                transform: translateY(100vh) rotate(960deg);
+                                opacity: 0;
+                            }
+                        }
+                    </style>
+                    
                     <div style="width: 100%; display: flex; justify-content: center; margin-top: 40px;">
                         <div style="width: 240px; display: flex; justify-content: space-between; gap: 8px;">
                             <button class="btn-primary" style="padding: 12px 24px; background: #2A2A2A; border: none; border-radius: 100px; color: white; font-size: 14px; font-weight: normal; display: flex; align-items: center; gap: 8px;">
@@ -499,7 +613,7 @@
                     <div class="footer-content">
                         <div class="copyright">© 2024 All rights reserved.</div>
                         <div class="social-links">
-                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/heyadrsh/" target="_blank">LinkedIn</a>
                             <span>/</span>
                             <a href="https://github.com/heyadrsh" target="_blank">GitHub</a>
                             <span>/</span>
@@ -521,13 +635,13 @@
                 // Change button text to "Copied!"
                 copyButton.textContent = 'Copied!';
                 
-                // Add a success class for visual feedback
-                copyButton.classList.add('copied');
+                // Add a subtle animation
+                copyButton.classList.add('copy-animation');
                 
                 // Reset button text after 2 seconds
                 setTimeout(() => {
                     copyButton.textContent = originalText;
-                    copyButton.classList.remove('copied');
+                    copyButton.classList.remove('copy-animation');
                 }, 2000);
             }).catch(err => {
                 console.error('Failed to copy:', err);
@@ -1027,42 +1141,43 @@
                     tech: "Python • TensorFlow • Pygame • Neural Networks",
                     description: "An intelligent snake game where AI learns and evolves using deep reinforcement learning, featuring both autonomous and player modes with sleek visualization.",
                     image: "public/images/projects/snake-ai.webp",
-                    github: "https://github.com/yourusername/snake-ai",
+                    github: "https://github.com/heyadrsh/snake-ai",
                     demo: "https://snake-ai-demo.com"
                 },
                 {
-                    name: "AI Image Generation Platform",
-                    tech: "Python • TensorFlow • React • Node.js",
-                    description: "A full-stack AI platform that generates unique images from text descriptions using advanced machine learning models.",
-                    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    github: "https://github.com/yourusername/ai-image-generator",
-                    demo: "https://ai-image-generator.demo.com"
+                    name: "Brain Tumor Detection",
+                    tech: "Python • PyTorch • Flask • Full-Stack • CNN",
+                    description: "A full-stack web application that detects brain tumors in MRI scans with 98.6% accuracy using Convolutional Neural Networks (CNN) and deep learning techniques.",
+                    image: "public/images/projects/brain-tumor-detection.webp",
+                    github: "https://github.com/heyadrsh/brain-tumor-detection"
                 },
                 {
                     name: "Smart Task Manager",
-                    tech: "Python • Django • PostgreSQL",
-                    description: "An intelligent task management system that uses machine learning to prioritize and organize tasks efficiently.",
-                    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    github: "https://github.com/yourusername/smart-task-manager",
+                    tech: "Python • Machine Learning • Flask",
+                    description: "Task management system that intelligently prioritizes items using machine learning, with email integration and recurring tasks.",
+                    image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    github: "https://github.com/heyadrsh/smart-task-manager",
                     demo: "https://smart-task-manager.demo.com"
                 },
                 {
-                    name: "Data Visualization Dashboard",
-                    tech: "Python • Pandas • D3.js",
-                    description: "Interactive dashboard for visualizing complex datasets with real-time updates and customizable charts.",
-                    image: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    github: "https://github.com/yourusername/data-viz-dashboard",
-                    demo: "https://data-viz-dashboard.demo.com"
+                    name: "Alternate Reality News Generator",
+                    tech: "Web Design • Google Gemini API • AI Image Generation",
+                    description: "An interactive web application that generates fictional news articles and images from alternate timelines with vintage styling and Indian context.",
+                    image: "public/images/projects/feature-alternate-reality-news-generator.webp",
+                    github: "https://github.com/heyadrsh/alternate-reality-news-generator.git",
+                    demo: "https://heyadrsh.github.io/alternate-reality-news-generator/",
+                    videoDemo: "public/demo-vids/alternate-reality-news-generator.webm"
                 },
                 {
-                    name: "ML-Powered Chatbot",
-                    tech: "Python, NLTK, FastAPI",
-                    description: "A natural language processing chatbot that learns from conversations to provide more accurate responses.",
-                    image: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    name: "Gunshot Detection System",
+                    tech: "Python • TensorFlow • Signal Processing • YAMNet",
+                    description: "An advanced machine learning-based system for detecting and classifying gunshot sounds in audio streams using Convolutional Neural Networks (CNN) and acoustic analysis.",
+                    image: "public/images/projects/gunshotdetection.webp",
+                    github: "https://github.com/heyadrsh/gunshotdetection.git"
                 },
                 {
                     name: "Cloud File System",
-                    tech: "Python, AWS, React",
+                    tech: "Python • AWS • React",
                     description: "Secure cloud-based file management system with advanced search and sharing capabilities.",
                     image: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 }
@@ -1084,7 +1199,35 @@
                 img.alt = project.name;
                 img.className = `testimonial-image ${index === 0 ? 'active' : ''}`;
                 img.loading = 'lazy';
-                imageContainer.appendChild(img);
+                
+                // Create image wrapper div to hold the image and video button
+                const imgWrapper = document.createElement('div');
+                imgWrapper.className = `testimonial-image ${index === 0 ? 'active' : ''}`;
+                imgWrapper.style.backgroundImage = `url(${project.image})`;
+                imgWrapper.style.backgroundSize = 'cover';
+                imgWrapper.style.backgroundPosition = 'center';
+                
+                // Add video button if project has video demo
+                if (project.videoDemo) {
+                    const videoBtn = document.createElement('button');
+                    videoBtn.className = 'watch-video-btn';
+                    videoBtn.innerHTML = `
+                        <svg width="20" height="20" viewBox="0 0 24 24" stroke="white" stroke-width="2" fill="none">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M10 8l6 4-6 4V8z" fill="white" />
+                        </svg>
+                        Watch Demo
+                    `;
+                    videoBtn.dataset.video = project.videoDemo;
+                    videoBtn.dataset.projectName = project.name;
+                    videoBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openVideoModal(project.videoDemo, project.name);
+                    });
+                    imgWrapper.appendChild(videoBtn);
+                }
+                
+                imageContainer.appendChild(imgWrapper);
             });
 
             function updateProject(index) {
@@ -1131,6 +1274,14 @@
                     activeImage.style.display = 'block';
                     setTimeout(() => {
                         activeImage.classList.add('active');
+                        
+                        // Check if this project has a video demo and ensure button is visible
+                        if (projects[index].videoDemo) {
+                            const watchBtn = activeImage.querySelector('.watch-video-btn');
+                            if (watchBtn) {
+                                watchBtn.style.opacity = '1';
+                            }
+                        }
                     }, 50);
                 }
 
@@ -1158,8 +1309,28 @@
                     const githubLink = document.querySelector('.project-action-btn.github');
                     const demoLink = document.querySelector('.project-action-btn.demo');
                     
-                    if (githubLink) githubLink.href = projects[index].github;
-                    if (demoLink) demoLink.href = projects[index].demo;
+                    if (githubLink) {
+                        githubLink.href = projects[index].github || "#";
+                        githubLink.target = "_blank"; // Open in new tab
+                        githubLink.style.display = projects[index].github ? "flex" : "none";
+                    }
+                    
+                    if (demoLink) {
+                        // Check if demo property exists and handle display
+                        if (projects[index].demo) {
+                            demoLink.href = projects[index].demo;
+                            demoLink.target = "_blank"; // Open in new tab
+                            demoLink.style.display = "flex";
+                        } else {
+                            demoLink.style.display = "none";
+                        }
+                    }
+                    
+                    // Remove any existing video buttons from project actions
+                    const videoLink = document.querySelector('.project-action-btn.video');
+                    if (videoLink) {
+                        videoLink.remove();
+                    }
 
                     textContainer.classList.add('active');
                     
@@ -1172,6 +1343,275 @@
                         }, 10);
                     });
                 }, 300);
+            }
+
+            // Function to open video modal
+            function openVideoModal(videoSrc, projectName) {
+                const modal = document.getElementById('videoModal');
+                const video = document.getElementById('demoVideo');
+                const videoTitle = document.querySelector('.video-title');
+                const videoSource = video.querySelector('source');
+                const playIcon = document.querySelector('.play-icon');
+                const pauseIcon = document.querySelector('.pause-icon');
+                
+                // Fade out project components with subtle animation
+                const projectComponents = document.querySelectorAll('.testimonial-text, .testimonial-controls, .testimonial-image:not(.active)');
+                projectComponents.forEach(component => {
+                    component.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    component.style.opacity = '0';
+                    component.style.transform = 'translateY(10px)';
+                });
+                
+                // Fade the active project image
+                const activeImage = document.querySelector('.testimonial-image.active');
+                if (activeImage) {
+                    activeImage.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    activeImage.style.opacity = '0.3';
+                    activeImage.style.transform = 'scale(0.95)';
+                    
+                    // Fade the Watch Demo button
+                    const watchBtn = activeImage.querySelector('.watch-video-btn');
+                    if (watchBtn) {
+                        watchBtn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        watchBtn.style.opacity = '0';
+                        watchBtn.style.transform = 'translateY(10px)';
+                    }
+                }
+                
+                // Set video source and title
+                videoSource.src = videoSrc;
+                videoTitle.textContent = `${projectName} - Demo`;
+                
+                // Reset video
+                video.load();
+                video.currentTime = 0;
+                
+                // Show modal
+                modal.classList.add('active');
+                
+                // Initialize video controls
+                initVideoControls();
+                
+                // Autoplay video after a short delay to ensure it's ready
+                video.addEventListener('loadeddata', () => {
+                    setTimeout(() => {
+                        video.play()
+                            .then(() => {
+                                // Update play/pause button state
+                                if (playIcon && pauseIcon) {
+                                    playIcon.style.display = 'none';
+                                    pauseIcon.style.display = 'block';
+                                }
+                            })
+                            .catch(err => {
+                                console.error('Error autoplaying video:', err);
+                            });
+                    }, 300);
+                }, { once: true });
+            }
+            
+            // Function to close video modal and restore components
+            function closeVideoModal() {
+                const modal = document.getElementById('videoModal');
+                const video = document.getElementById('demoVideo');
+                
+                // Hide modal
+                modal.classList.remove('active');
+                
+                // Pause video
+                video.pause();
+                
+                // Fade in project components with subtle animation
+                setTimeout(() => {
+                    const projectComponents = document.querySelectorAll('.testimonial-text, .testimonial-controls, .testimonial-image:not(.active)');
+                    projectComponents.forEach(component => {
+                        component.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        component.style.opacity = '';
+                        component.style.transform = '';
+                    });
+                    
+                    // Restore the active project image
+                    const activeImage = document.querySelector('.testimonial-image.active');
+                    if (activeImage) {
+                        activeImage.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        activeImage.style.opacity = '';
+                        activeImage.style.transform = '';
+                        
+                        // Restore the Watch Demo button
+                        const watchBtn = activeImage.querySelector('.watch-video-btn');
+                        if (watchBtn) {
+                            watchBtn.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            watchBtn.style.opacity = '';
+                            watchBtn.style.transform = '';
+                        }
+                    }
+                }, 300);
+            }
+            
+            // Initialize video modal controls
+            function initVideoControls() {
+                const modal = document.getElementById('videoModal');
+                const video = document.getElementById('demoVideo');
+                const closeBtn = document.querySelector('.video-close-btn');
+                const playBtn = document.querySelector('.video-play-btn');
+                const playIcon = document.querySelector('.play-icon');
+                const pauseIcon = document.querySelector('.pause-icon');
+                const progressFill = document.querySelector('.progress-fill');
+                const progressBar = document.querySelector('.progress-bar');
+                const timeDisplay = document.querySelector('.time-display');
+                const volumeBtn = document.querySelector('.volume-btn');
+                const volumeIcon = document.querySelector('.volume-icon');
+                const muteIcon = document.querySelector('.mute-icon');
+                const fullscreenBtn = document.querySelector('.fullscreen-btn');
+                
+                // Close modal
+                closeBtn.addEventListener('click', () => {
+                    closeVideoModal();
+                });
+                
+                // Close modal when clicking outside the video container
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeVideoModal();
+                    }
+                });
+                
+                // Play/Pause button
+                playBtn.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playIcon.style.display = 'none';
+                        pauseIcon.style.display = 'block';
+                    } else {
+                        video.pause();
+                        playIcon.style.display = 'block';
+                        pauseIcon.style.display = 'none';
+                    }
+                });
+                
+                // Update progress bar and time display
+                video.addEventListener('timeupdate', () => {
+                    const progress = (video.currentTime / video.duration) * 100;
+                    progressFill.style.width = `${progress}%`;
+                    
+                    // Format time display
+                    const currentTime = formatTime(video.currentTime);
+                    const duration = formatTime(video.duration);
+                    timeDisplay.textContent = `${currentTime} / ${duration}`;
+                });
+                
+                // Click on progress bar to seek
+                progressBar.addEventListener('click', (e) => {
+                    const rect = progressBar.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    video.currentTime = pos * video.duration;
+                });
+                
+                // Volume button
+                volumeBtn.addEventListener('click', () => {
+                    if (video.muted) {
+                        video.muted = false;
+                        volumeIcon.style.display = 'block';
+                        muteIcon.style.display = 'none';
+                    } else {
+                        video.muted = true;
+                        volumeIcon.style.display = 'none';
+                        muteIcon.style.display = 'block';
+                    }
+                });
+                
+                // Fullscreen button
+                fullscreenBtn.addEventListener('click', () => {
+                    if (!document.fullscreenElement) {
+                        const videoWrapper = document.querySelector('.video-wrapper');
+                        if (videoWrapper.requestFullscreen) {
+                            videoWrapper.requestFullscreen();
+                        } else if (videoWrapper.webkitRequestFullscreen) {
+                            videoWrapper.webkitRequestFullscreen();
+                        } else if (videoWrapper.msRequestFullscreen) {
+                            videoWrapper.msRequestFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+                    }
+                });
+                
+                // Format time to MM:SS
+                function formatTime(seconds) {
+                    if (isNaN(seconds)) return "00:00";
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                
+                // Toggle video play/pause when clicking on video
+                video.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playIcon.style.display = 'none';
+                        pauseIcon.style.display = 'block';
+                    } else {
+                        video.pause();
+                        playIcon.style.display = 'block';
+                        pauseIcon.style.display = 'none';
+                    }
+                });
+                
+                // Update play/pause button based on video state
+                video.addEventListener('play', () => {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                });
+                
+                video.addEventListener('pause', () => {
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                });
+                
+                // Handle video end
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                });
+                
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (!modal.classList.contains('active')) return;
+                    
+                    switch (e.key) {
+                        case ' ':
+                        case 'k':
+                            e.preventDefault();
+                            if (video.paused) {
+                                video.play();
+                            } else {
+                                video.pause();
+                            }
+                            break;
+                        case 'Escape':
+                            closeVideoModal();
+                            break;
+                        case 'f':
+                            fullscreenBtn.click();
+                            break;
+                        case 'm':
+                            volumeBtn.click();
+                            break;
+                        case 'ArrowLeft':
+                            video.currentTime = Math.max(0, video.currentTime - 5);
+                            break;
+                        case 'ArrowRight':
+                            video.currentTime = Math.min(video.duration, video.currentTime + 5);
+                            break;
+                    }
+                });
             }
 
             function handleNext() {
@@ -1641,7 +2081,9 @@
             const minSpeed = 80;  // Minimum speed (fastest)
             
             // Calculate speed with smooth progression
-            return Math.max(baseSpeed - ((this.level - 1) * speedReduction), minSpeed);
+            const speed = Math.max(baseSpeed - ((this.level - 1) * speedReduction), minSpeed);
+            console.log(`Current Speed for Level ${this.level}: ${speed}`); // Debugging statement
+            return speed;
         }
 
         updateLevel() {
@@ -1649,6 +2091,7 @@
             const newLevel = Math.floor(this.score / 50) + 1;
             if (newLevel !== this.level) {
                 this.level = newLevel;
+                console.log(`Level Up! New Level: ${this.level}`); // Debugging statement
                 // Update speed when level changes
                 if (!this.isPaused && !this.isGameOver) {
                     this.start(); // Restart game loop with new speed
@@ -2099,6 +2542,15 @@
                 <button class="game-control-btn toggle-ai">Manual</button>
             `;
             
+            const mobileControls = document.createElement('div');
+            mobileControls.className = 'mobile-game-controls';
+            mobileControls.innerHTML = `
+                <button class="mobile-control-btn mobile-up">↑</button>
+                <button class="mobile-control-btn mobile-right">→</button>
+                <button class="mobile-control-btn mobile-down">↓</button>
+                <button class="mobile-control-btn mobile-left">←</button>
+            `;
+            
             const overlay = document.createElement('div');
             overlay.className = 'game-overlay';
             overlay.innerHTML = `
@@ -2110,6 +2562,7 @@
             gameContainer.appendChild(canvas);
             gameContainer.appendChild(scoreDiv);
             gameContainer.appendChild(controls);
+            gameContainer.appendChild(mobileControls);
             gameContainer.appendChild(overlay);
             
             firstImage.style.display = 'none';
@@ -2228,11 +2681,231 @@
                     });
                 }
             }
+            
+            // Add mobile touch controls
+            const mobileUp = document.querySelector('.mobile-up');
+            const mobileRight = document.querySelector('.mobile-right');
+            const mobileDown = document.querySelector('.mobile-down');
+            const mobileLeft = document.querySelector('.mobile-left');
+            
+            if (mobileUp) {
+                mobileUp.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    if (!game.isAIMode && !game.isPaused && !game.isGameOver) {
+                        game.setDirection(0, -1);
+                    }
+                });
+            }
+            
+            if (mobileRight) {
+                mobileRight.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    if (!game.isAIMode && !game.isPaused && !game.isGameOver) {
+                        game.setDirection(1, 0);
+                    }
+                });
+            }
+            
+            if (mobileDown) {
+                mobileDown.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    if (!game.isAIMode && !game.isPaused && !game.isGameOver) {
+                        game.setDirection(0, 1);
+                    }
+                });
+            }
+            
+            if (mobileLeft) {
+                mobileLeft.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    if (!game.isAIMode && !game.isPaused && !game.isGameOver) {
+                        game.setDirection(-1, 0);
+                    }
+                });
+            }
 
             // Initialize game in paused state
             game.draw();
         }
     });
+    </script>
+
+    <!-- Video Modal Popup -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-container">
+            <div class="video-header">
+                <h3 class="video-title">Project Demo</h3>
+                <button class="video-close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="video-wrapper">
+                <video id="demoVideo" preload="metadata" playsinline>
+                    <source src="" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <button class="video-play-btn">
+                        <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                        </svg>
+                    </button>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="time-display">00:00 / 00:00</div>
+                    </div>
+                    <button class="volume-btn">
+                        <svg class="volume-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path class="volume-wave" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path class="volume-wave" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                        <svg class="mute-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                    <button class="fullscreen-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+                            <path d="M21 8V5a2 2 0 0 0-2-2h-3"></path>
+                            <path d="M3 16v3a2 2 0 0 0 2 2h3"></path>
+                            <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <scri
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ]="]
+    '
+    '"
+    t>
+    // Close video modal
+    document.querySelector('.video-close-btn').addEventListener('click', function() {
+        const videoModal = document.querySelector('.video-modal');
+        const video = document.querySelector('.video-wrapper video');
+        
+        // Add closing class for exit animation
+        videoModal.classList.add('closing');
+        
+        // Pause the video
+        if (video) {
+            video.pause();
+        \
+
+        }
+        
+        // After animation completes, hide modal and remove closing class
+        setTimeout(function() {
+            videoModal.classList.remove('active');
+            videoModal.classList.remove('closing');
+        }, 400);
+    });
+
+    // Watch button click handler
+    document.querySelector('.watch-video-btn').addEventListener('click', function() {
+        const videoModal = document.querySelector('.video-modal');
+        const video = document.querySelector('.video-wrapper video');
+        
+        // Show modal
+        videoModal.classList.add('active');
+        
+        // Play video after modal is visible
+        setTimeout(function() {
+            if (video) {
+                video.play().catch(error => {
+                    console.log('Auto-play was prevented:', error);
+                });
+            }
+        }, 500);
+    });
+    </script>
+
+    <script>
+    // Keyboard controls for video player
+    document.addEventListener('keydown', function(e) {
+        const video = document.querySelector('.video-wrapper video');
+        if (!video || !document.querySelector('.video-modal.active')) return;
+        
+        switch(e.key) {
+            case ' ':
+                // Space - toggle play/pause
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+                e.preventDefault();
+                break;
+            case 'ArrowRight':
+                // Right arrow - skip forward 5 seconds
+                video.currentTime = Math.min(video.duration, video.currentTime + 5);
+                e.preventDefault();
+                break;
+            case 'ArrowLeft':
+                // Left arrow - skip backward 5 seconds
+                video.currentTime = Math.max(0, video.currentTime - 5);
+                e.preventDefault();
+                break;
+            case 'f':
+                // F key - toggle fullscreen
+                toggleFullscreen();
+                e.preventDefault();
+                break;
+        }
+    });
+
+    // Toggle fullscreen function
+    function toggleFullscreen() {
+        const videoContainer = document.querySelector('.video-wrapper');
+        if (!videoContainer) return;
+        
+        if (!document.fullscreenElement) {
+            if (videoContainer.requestFullscreen) {
+                videoContainer.requestFullscreen();
+            } else if (videoContainer.webkitRequestFullscreen) {
+                videoContainer.webkitRequestFullscreen();
+            } else if (videoContainer.msRequestFullscreen) {
+                videoContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
     </script>
 </body>
 </html> 
